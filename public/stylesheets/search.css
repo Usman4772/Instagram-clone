@@ -1,0 +1,92 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg:#19191cff;
+    --btn:#3b82f5ff;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg);
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem 0;
+    gap: 2rem;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchbar{
+    width: 90%;
+    height: 4.5rem;
+    border: 1px solid #5b5757;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    border-radius: .5rem;
+    align-items: center;
+
+}
+.searchbar input{
+width: calc(100% - 4rem); 
+height: 100%;
+background-color: transparent;
+border: none;
+outline: none;
+color: white;
+font-size: 1.7rem;
+font-weight: 400;
+
+}
+.searchbar i{
+    font-size: 1.6rem;
+}
+.users{
+    width: 100%;
+    height:calc(100vh - 4rem) ;
+    /* background-color: red; */
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+}
+.users .user{
+    width: 90%;
+    height: 8rem;
+    /* border:2px solid #5b5757; */
+    justify-content: flex-start;
+    padding: 0 1rem;
+    gap: 2rem;
+}
+.user img{
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+}
+.user .username-div .username{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.username-div .name{
+    font-size: 1.4rem;
+    color: #706f6f;
+}
+

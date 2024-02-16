@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #19191cff;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+.main-container{
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+}
+.main-container nav{
+    width: 100%;
+    height: 10%;
+    /* border: 2px solid red; */
+    justify-content: space-between;
+    padding: 0 2rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+.addpostnav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    font-size: 1.8rem;
+}
+.addpostnav a{
+    text-decoration: none;
+    color: white;
+}
+.fa-plus{
+    border: 2px solid white;
+    padding: .3rem;
+}
+
+.img-follower-div{
+    width: 100%;
+    height:15% ;
+    /* border: 2px solid green; */
+    justify-content: space-between;
+    padding: 0 2rem;
+    font-size: 2rem;
+
+}
+.img-follower-div img{
+width: 8rem;
+height: 8rem;
+border-radius: 50%;
+}
+.img-follower-div .defaultDp{
+font-size: 4rem;
+border-radius: 50%;
+position: relative;
+}
+.defaultDp::after{
+    content: "";
+    position: absolute;
+    left: 0px;
+    width: 108%;
+    height: 5px;
+    background-color: #9b9393;
+    transform: rotate(45deg);
+    top: 44%;
+
+}
+.followers-div{
+    gap: 1.5rem;
+    text-align: center;
+}
+.main-container .name{
+    font-size: 1.9rem;
+    margin-left: 2rem;
+    color: rgb(202, 202, 202);
+}
+.main-container .about{
+    margin-left: 2rem;
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+
+}
+.edit-profileBtn{
+    width: 10rem;
+    height: 3rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    background-color:grey ;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: white;
+
+}
+
+.posts{
+    width: 100%;
+    /* height:calc(100% - 25% - 5rem ) ; */
+    overflow-y: auto;
+    /* background-color: red; */
+    border-top: .6px solid white;
+    flex-wrap: wrap;
+    gap: .7rem;
+
+    justify-content: flex-start;
+    /* align-items: flex; */
+    align-items: flex-start;
+
+    padding: 0 .4rem;
+    margin-bottom: 7rem;
+    padding-top: .5rem;
+}
+.posts img{
+    width: 13rem;
+    height: 10rem;
+    object-fit: cover;
+
+}

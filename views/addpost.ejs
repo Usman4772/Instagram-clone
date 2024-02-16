@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/addpost.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+</head>
+<body>
+    <nav >
+        <a href="/profile" class="profile flex">
+            <i class="fa-solid fa-chevron-left"></i>
+            <h4>profile</h4>
+        </a>
+        <h3 class="uploadPost">Upload Post</h3>
+        <a href="/feed" class="home flex">
+            <i class="fa-solid fa-house"></i>
+            <h4 class="home">home</h4>
+        </a>
+    </nav>
+<div class="main-container flex">
+    <div class="flex image-selection-container">
+        <div class="img-container">
+        <i class="fa-solid fa-image"></i>
+    </div>
+        <h3 class="selectPicBtn" href="">Select Picture</h3>
+       
+    </div>
+    <form action="/addpost" method="post" enctype="multipart/form-data" class="input-post-form flex">
+        <input hidden type="file" name="post" id="post">
+        <input type="text" placeholder="Write Caption..." name="caption" id="">
+        <button type="submit">Post</button>
+</form>
+
+
+<footer >
+       
+    <a href="/feed"><i class="fa-solid fa-house"></i></a>
+    <a href="/search"><i class="fa-solid fa-magnifying-glass"></i></a>
+    <a href="/addpost"><i class="fa-solid fa-plus"></i></a>
+    <a href="/profile"><img src="/images/uploads/<%=user.profileImage%>" alt=""></a>
+</footer>
+    <script src="https://kit.fontawesome.com/8bb923acc4.js" crossorigin="anonymous"></script>
+    <script>
+        document.querySelector(".selectPicBtn").addEventListener("click",()=>{
+            document.querySelector("#post").click()
+        })
+     
+        document.addEventListener("DOMContentLoaded", function (event) {
+            var scrollpos = sessionStorage.getItem('scrollpos');
+            if (scrollpos) {
+                window.scrollTo(0, scrollpos);
+                sessionStorage.removeItem('scrollpos');
+            }
+        });
+      
+        window.addEventListener("beforeunload", function (e) {
+            sessionStorage.setItem('scrollpos', window.scrollY);
+        });
+
+    </script>
+    
+</body>
+</html>

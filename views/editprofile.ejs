@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/editprofile.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+</head>
+<body>
+    <nav >
+        <a href="/profile" class="profile flex">
+            <i class="fa-solid fa-chevron-left"></i>
+            <h4>profile</h4>
+        </a>
+        <h3 class="editProfile">Edit Profile</h3>
+        <a href="/feed" class="home flex">
+            <i class="fa-solid fa-house"></i>
+            <h4 class="home">home</h4>
+        </a>
+    </nav>
+    <div class="main-container flex">
+    <div class="editpic-container flex">
+        <div class="img-container">
+        <i class="fa-solid fa-image"></i>
+    </div>
+        <h3 class="editpicBtn">Edit Picture</h3>
+    </div>
+    <h2 class="heading">Edit Account Details</h2>
+    <form action="/updateDetails" method="post" enctype="multipart/form-data" class="inputs">
+        <input hidden type="file" name="image" id="image">
+        <input type="text" name="name" id="" placeholder="name" value="<%=user.name%>">
+        <input type="text" name="username" id="" placeholder="username" value="<%=user.username%>">
+        <input type="text" name="bio" id="" placeholder="bio" value="<%=user.bio%>">
+        <button type="submit" class="updateBtn">
+            Update Details
+        </button>
+    </form>
+
+    <footer >
+       
+        <a href="/feed"><i class="fa-solid fa-house"></i></a>
+        <a href="/search"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="/addpost"><i class="fa-solid fa-plus"></i></a>
+        <a href="/profile"><img src="/images/uploads/<%=user.profileImage%>" alt=""></a>
+    </footer>
+</div>
+
+<script src="https://kit.fontawesome.com/8bb923acc4.js" crossorigin="anonymous"></script>
+<script>
+    document.querySelector(".editpicBtn").addEventListener("click",()=>{
+        document.querySelector("#image").click()
+    })
+    document.addEventListener("DOMContentLoaded", function (event) {
+            var scrollpos = sessionStorage.getItem('scrollpos');
+            if (scrollpos) {
+                window.scrollTo(0, scrollpos);
+                sessionStorage.removeItem('scrollpos');
+            }
+        });
+      
+        window.addEventListener("beforeunload", function (e) {
+            sessionStorage.setItem('scrollpos', window.scrollY);
+        });
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/stylesheets/login-register.css">
+    <style>
+        a{
+            text-decoration: none;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container flex">
+        <img src="/images/logo.png" class="insta-logo"/>
+        <form action="/login" method="post" class="form">
+        <div class="inputs-container flex">
+            <input type="text" placeholder="username" name="username" id="">
+            <input type="password" placeholder="password" name="password" id="">
+            <button type="submit" class="login-btn flex">Log In</button>
+        </div>
+    </form>
+<h4 class="register">New to istagram? <a href="/" style="color: #3b82f5ff;">Regisgter</a></h4>
+    </div>
+    <script>
+             document.addEventListener("DOMContentLoaded", function (event) {
+            var scrollpos = sessionStorage.getItem('scrollpos');
+            if (scrollpos) {
+                window.scrollTo(0, scrollpos);
+                sessionStorage.removeItem('scrollpos');
+            }
+        });
+      
+        window.addEventListener("beforeunload", function (e) {
+            sessionStorage.setItem('scrollpos', window.scrollY);
+        });
+    </script>
+</body>
+</html>

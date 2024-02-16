@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/search.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+</head>
+<body>
+    <div class="searchbar ">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" name="search" id="input" placeholder="Search user...">
+    </div>
+<div class="users">
+
+</div>
+
+
+<footer >
+       
+    <a href="/feed"><i class="fa-solid fa-house"></i></a>
+    <a href="/search"><i class="fa-solid fa-magnifying-glass"></i></a>
+    <a href="/addpost"><i class="fa-solid fa-plus"></i></a>
+    <a href="/profile"><img src="/images/uploads/<%=user.profileImage%>" alt=""></a>
+</footer>
+<script src="/javascripts/search.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js" integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://kit.fontawesome.com/8bb923acc4.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+       var scrollpos = sessionStorage.getItem('scrollpos');
+       if (scrollpos) {
+           window.scrollTo(0, scrollpos);
+           sessionStorage.removeItem('scrollpos');
+       }
+   });
+ 
+   window.addEventListener("beforeunload", function (e) {
+       sessionStorage.setItem('scrollpos', window.scrollY);
+   });
+</script>
+</body>
+</html>

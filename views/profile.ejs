@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+    <style>
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="main-container flex">
+    <nav class="flex">
+        <div class="username"><%=user.username%></div>
+        <div class="addpostnav ">
+            <a href="/addpost"><i class="fa-solid fa-plus"></i></a>
+            <a href=""><i class="fa-solid fa-bars"></i></a>
+        </div>
+
+    </nav>
+    <div class="img-follower-div flex">
+        <%if(user.profileImage ===undefined){%>
+            <i class="fa-solid fa-image defaultDp"></i>
+        <%}else{%>
+        
+            <img src="/images/uploads/<%=user.profileImage%>" alt="">
+       <% }%>
+        <div class="followers-div flex">
+            <div class="posts-count ">
+                <span>1</span>
+                <br>
+                Posts
+            </div>
+            <div class="followers-count">
+                <span>24</span>
+                <br>
+                Followers
+            </div>
+            <div class="following-count">
+                <span>192</span>
+                <br>
+                Following
+            </div>
+        </div>
+            </div>
+      <h2 class="name"><%=user.name%></h2>      
+    <h3 class="about"><%=user.bio%></h3>
+    <a href="/editprofile" class="edit-profileBtn flex">Edit profile</a>
+<section class="posts flex">
+<%user.posts.forEach(post=>{%>
+    <img src="/images/uploads/<%=post.image%>" alt="">
+<%})%>
+
+
+
+    
+    
+</section>
+<footer >
+       
+    <a href="/feed"><i class="fa-solid fa-house"></i></a>
+    <a href="/search"><i class="fa-solid fa-magnifying-glass"></i></a>
+    <a href="/addpost"><i class="fa-solid fa-plus"></i></a>
+    <a href="/profile"><img src="/images/uploads/<%=user.profileImage%>" alt=""></a>
+</footer>
+</div>
+<script src="https://kit.fontawesome.com/8bb923acc4.js" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+   var scrollpos = sessionStorage.getItem('scrollpos');
+   if (scrollpos) {
+       window.scrollTo(0, scrollpos);
+       sessionStorage.removeItem('scrollpos');
+   }
+});
+
+window.addEventListener("beforeunload", function (e) {
+   sessionStorage.setItem('scrollpos', window.scrollY);
+});
+</script>
+</body>
+</html>

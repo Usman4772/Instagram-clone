@@ -1,0 +1,173 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg:#19191cff;
+    --btn:#3b82f5ff;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg);
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav{
+    width: 100vw;
+    height: 8rem;
+    /* background-color: rgb(189, 23, 23); */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 1rem;
+    
+}
+nav img{
+    width: 10rem;
+}
+.notification{
+    gap: 2rem;
+}
+nav .notification i {
+    font-size: 2rem;
+  
+}
+.stories {
+    width: 100%; /* Adjust the width as needed */
+    height: 9rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 2rem;
+    align-items: center;
+    white-space: nowrap;
+    gap: 1rem;
+}
+
+
+.stories::-webkit-scrollbar{
+    display: none;
+}
+.stories .story{
+width: 8rem;
+height: 8rem;
+border-radius: 50%;
+display: inline-block;
+position: relative;
+
+
+}
+.story img{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+
+}
+.posts{
+    width: 100%;
+    height: calc(100vh - 8rem - 17rem);
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 2rem;
+    /* background-color: green; */
+    overflow-y:auto ;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+.posts .post{
+    width: 100%;
+    height: 55rem;
+    /* border: 2px solid red; */
+}
+.post .post-nav{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 1.8rem;
+    /* border: 2px solid red; */
+
+}
+.post-nav .username{
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+.post-nav img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+.mainpost{
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    object-position:center ;
+}
+.post-footer{
+    width: 100%;
+    height: 15%;
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    font-size: 2rem;
+}
+.left-footer{
+    width: 50%;
+    display: flex;
+   gap: 2rem;
+}
+.like-div{
+    position: relative;
+}
+.like-div span{
+    font-size: 1.4rem;
+    position: absolute;
+    bottom: -20px;
+    left: 22%;
+}
+.saveBtn{
+margin-right: 1rem;
+}
+.caption-container{
+    width: 100%;
+    height:10% ;
+    /* border: 2px solid purple; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 2rem;
+
+}
+.caption-container .caption-username{
+font-size: 1.7rem;
+font-weight: 500;
+}
+.caption-container .caption{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
